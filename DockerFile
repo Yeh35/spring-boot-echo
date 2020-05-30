@@ -1,0 +1,6 @@
+FROM openjdk:8-jre-alpine
+VOLUME /tmp
+EXPOSE 8080
+ARG JAR_FILE=/build/libs/*.jar
+ADD ${JAR_FILE} spring-boot.jar
+ENTRYPOINT ["java","-jar","/spring-boot.jar"]
